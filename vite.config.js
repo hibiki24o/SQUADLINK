@@ -8,4 +8,5 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    base: '/', // ←これ追加（超重要）
 });
