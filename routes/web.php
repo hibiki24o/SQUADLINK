@@ -5,7 +5,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Auth\GoogleController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
+Route::get('/migrate', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return 'migrated!';
+});
 /*
 |--------------------------------------------------------------------------
 | Public
