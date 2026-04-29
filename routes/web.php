@@ -7,6 +7,12 @@ use App\Http\Controllers\Auth\GoogleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
+Route::get('/clear', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    return 'cleared!';
+});
+
 Route::get('/migrate', function () {
     Artisan::call('migrate', ['--force' => true]);
     return 'migrated!';
