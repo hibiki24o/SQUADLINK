@@ -61,7 +61,10 @@ class GameSeeder extends Seeder
         ];
 
         foreach ($games as $game) {
-            Game::create($game);
+            Game::updateOrCreate(
+                ['slug' => $game['slug']], // ← 一意キー
+                $game
+            );
         }
     }
 }

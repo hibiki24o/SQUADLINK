@@ -19,7 +19,7 @@ COPY . .
 # Laravel依存
 RUN composer install --no-dev --optimize-autoloader
 
-# Viteビルド（ここ重要）
+# Viteビルド
 RUN npm install && npm run build
 
 # 権限
@@ -27,4 +27,8 @@ RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=10000
+# 重複しないSeeder前提
+CMD php artisan config:clear && \
+    php artisan migrate --force && \
+    php artisan db:seed --force && \
+    php artisan serve --host=0.0.0.0 --port=10000
