@@ -20,18 +20,18 @@
         <div class="absolute inset-0 opacity-10 z-20 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)_50%,rgba(0,0,0,0.3)_50%,rgba(0,0,0,0.3))] bg-[length:100%_4px]"></div>
 
         <!-- FPS レーダー (右上) -->
-        <div class="absolute top-8 right-8 w-32 h-32 border-2 border-cyber-accent/40 rounded-full bg-cyber-accent/5 z-30 overflow-hidden hidden md:block">
+        <div class="absolute top-4 right-4 w-24 h-24 md:top-8 md:right-8 md:w-32 md:h-32 border-2 border-cyber-accent/40 rounded-full bg-cyber-accent/5 z-30 overflow-hidden">
             <!-- レーダーの目盛り -->
-            <div class="absolute inset-0 rounded-full border border-cyber-accent/20 m-4"></div>
-            <div class="absolute inset-0 rounded-full border border-cyber-accent/20 m-8"></div>
+            <div class="absolute inset-0 rounded-full border border-cyber-accent/20 m-3 md:m-4"></div>
+            <div class="absolute inset-0 rounded-full border border-cyber-accent/20 m-6 md:m-8"></div>
             <!-- 十字 -->
             <div class="absolute top-0 bottom-0 left-1/2 w-px bg-cyber-accent/20 transform -translate-x-1/2"></div>
             <div class="absolute left-0 right-0 top-1/2 h-px bg-cyber-accent/20 transform -translate-y-1/2"></div>
             <!-- スキャンバー -->
             <div class="absolute top-1/2 left-1/2 w-1/2 h-full bg-gradient-to-t from-transparent to-cyber-accent/40 transform origin-left -translate-y-1/2 animate-radar-spin"></div>
             <!-- 敵の点 -->
-            <div class="absolute top-10 right-10 w-2 h-2 bg-red-500 rounded-full shadow-[0_0_8px_red] animate-pulse"></div>
-            <div class="absolute bottom-8 left-12 w-1.5 h-1.5 bg-red-500 rounded-full shadow-[0_0_8px_red] animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-6 right-6 md:top-10 md:right-10 w-1.5 h-1.5 md:w-2 md:h-2 bg-red-500 rounded-full shadow-[0_0_8px_red] animate-pulse"></div>
+            <div class="absolute bottom-6 left-8 md:bottom-8 md:left-12 w-1 h-1 md:w-1.5 md:h-1.5 bg-red-500 rounded-full shadow-[0_0_8px_red] animate-pulse" style="animation-delay: 1s;"></div>
         </div>
 
         <!-- 中央の照準 (クロスヘア) 背景用 -->
