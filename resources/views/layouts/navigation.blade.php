@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="glass-panel border-x-0 border-t-0 border-b border-cyber-border sticky top-0 z-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,9 +7,9 @@
 
                 <!-- Logo -->
                 <div class="flex items-center gap-2">
-                    <a href="{{ route('posts.index') }}" class="flex items-center gap-2">
-                        <span class="text-2xl">🎮</span>
-                        <span class="text-xl md:text-2xl font-bold text-gray-800">
+                    <a href="{{ route('posts.index') }}" class="flex items-center gap-2 group">
+                        <span class="text-2xl group-hover:scale-110 transition-transform">🎮</span>
+                        <span class="text-xl md:text-2xl font-bold text-white text-glow">
                             SquadLink
                         </span>
                     </a>
@@ -50,7 +50,7 @@
                     <x-dropdown align="right" width="48">
 
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">
+                            <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:text-glow transition-all duration-200">
                                 <div>{{ Auth::user()->name }}</div>
                                 <svg class="ms-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
@@ -76,13 +76,13 @@
 
                     </x-dropdown>
                 @else
-                    <div class="flex gap-3">
-                        <a href="{{ route('login') }}" class="text-sm text-blue-600">
+                    <div class="flex gap-4">
+                        <a href="{{ route('login') }}" class="text-sm font-bold text-cyber-accent hover:text-cyber-hover hover:text-glow transition-all duration-200">
                             ログイン
                         </a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="text-sm text-blue-600">
+                            <a href="{{ route('register') }}" class="text-sm font-bold text-cyber-accent hover:text-cyber-hover hover:text-glow transition-all duration-200">
                                 新規登録
                             </a>
                         @endif
@@ -112,7 +112,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{ 'block': open, 'hidden': ! open }" class="hidden sm:hidden">
+    <div :class="{ 'block': open, 'hidden': ! open }" class="hidden sm:hidden bg-cyber-bg/90 backdrop-blur-md border-b border-cyber-border">
 
         <div class="pt-2 pb-3 space-y-1">
 
@@ -141,10 +141,10 @@
 
             @auth
                 <div class="px-4">
-                    <div class="font-medium text-base text-gray-800">
+                    <div class="font-medium text-base text-white">
                         {{ Auth::user()->name }}
                     </div>
-                    <div class="font-medium text-sm text-gray-500">
+                    <div class="font-medium text-sm text-gray-400">
                         {{ Auth::user()->email }}
                     </div>
                 </div>
@@ -165,13 +165,13 @@
 
                 </div>
             @else
-                <div class="px-4 space-y-2">
-                    <a href="{{ route('login') }}" class="block text-blue-600">
+                <div class="px-4 py-2 space-y-2">
+                    <a href="{{ route('login') }}" class="block text-cyber-accent font-bold">
                         ログイン
                     </a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="block text-blue-600">
+                        <a href="{{ route('register') }}" class="block text-cyber-accent font-bold">
                             新規登録
                         </a>
                     @endif

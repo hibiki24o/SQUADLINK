@@ -2,8 +2,8 @@
     <div class="space-y-6">
 
         <!-- ヘッダー -->
-        <div class="flex justify-between items-center">
-            <h1 class="text-xl md:text-3xl font-bold">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-xl md:text-3xl font-bold text-cyber-accent text-glow">
                 マイ投稿
             </h1>
 
@@ -22,27 +22,27 @@
                     <!-- タイトル -->
                     <div class="flex justify-between items-center mb-2">
                         <a href="{{ route('posts.show', $post) }}"
-                           class="text-lg md:text-xl font-semibold hover:text-blue-600">
+                           class="text-lg md:text-xl font-bold text-white hover:text-cyber-hover transition-colors">
                             {{ $post->title }}
                         </a>
 
-                        <span class="text-sm text-gray-500">
+                        <span class="text-sm text-gray-400">
                             {{ $post->created_at->diffForHumans() }}
                         </span>
                     </div>
 
                     <!-- ゲーム -->
-                    <p class="text-sm text-blue-600 mb-2">
+                    <p class="text-sm text-cyber-accent font-bold mb-2">
                         {{ $post->game->name }}
                     </p>
 
                     <!-- 本文 -->
-                    <p class="text-gray-700 mb-3">
+                    <p class="text-gray-300 mb-3">
                         {{ $post->body }}
                     </p>
 
                     <!-- 詳細 -->
-                    <div class="text-sm text-gray-500 space-y-1">
+                    <div class="text-sm text-gray-400 space-y-1">
                         <p>Platform: {{ $post->platform }}</p>
                         <p>人数: {{ $post->recruit_count }}</p>
                     </div>
@@ -72,7 +72,7 @@
                 </x-card>
             @empty
                 <x-card>
-                    <p class="text-gray-500 text-center">
+                    <p class="text-gray-400 text-center font-bold">
                         まだ投稿がありません
                     </p>
                 </x-card>

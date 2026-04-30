@@ -4,27 +4,27 @@
         <!-- 投稿詳細 -->
         <x-card>
             <div class="flex justify-between items-center mb-2">
-                <h1 class="text-xl md:text-2xl text-gray-900 font-bold">
+                <h1 class="text-xl md:text-2xl text-white text-glow font-bold">
                     {{ $post->title }}
                 </h1>
 
-                <span class="text-sm text-gray-500">
+                <span class="text-sm text-gray-400">
                     {{ $post->created_at->diffForHumans() }}
                 </span>
             </div>
 
             <!-- ゲーム -->
-            <p class="text-blue-600 mb-2">
+            <p class="text-cyber-accent font-bold mb-2">
                 {{ $post->game->name }}
             </p>
 
             <!-- 本文 -->
-            <p class="mb-4 text-gray-700">
+            <p class="mb-4 text-gray-300">
                 {{ $post->body }}
             </p>
 
             <!-- 詳細 -->
-            <div class="text-sm text-gray-500 space-y-1">
+            <div class="text-sm text-gray-400 space-y-1">
                 <p>投稿者: {{ $post->user->name }}</p>
                 <p>Platform: {{ $post->platform }}</p>
                 <p>人数: {{ $post->recruit_count }}</p>
@@ -37,13 +37,13 @@
             <!-- フラグ -->
             <div class="mt-3 flex gap-2 text-xs">
                 @if($post->vc_flag)
-                    <span class="bg-green-100 text-green-700 px-2 py-1 rounded">
+                    <span class="bg-green-900/40 border border-green-500/50 text-green-400 px-2 py-1 rounded shadow-glow">
                         VCあり
                     </span>
                 @endif
 
                 @if($post->beginner_flag)
-                    <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
+                    <span class="bg-yellow-900/40 border border-yellow-500/50 text-yellow-400 px-2 py-1 rounded shadow-glow">
                         初心者歓迎
                     </span>
                 @endif
@@ -77,14 +77,14 @@
 
         <!-- コメント -->
         <x-card>
-            <h2 class="text-lg font-bold mb-4">コメント</h2>
+            <h2 class="text-lg font-bold mb-4 text-white text-glow">コメント</h2>
 
             @auth
                 <form method="POST" action="{{ route('comments.store', $post) }}" class="space-y-3">
                     @csrf
 
                     <textarea name="body" rows="3"
-                        class="w-full border rounded-lg p-2 focus:ring-2 text-black focus:ring-blue-500"
+                        class="w-full border rounded-lg p-2 focus:ring-2 text-black focus:ring-cyber-accent"
                         placeholder="参加したいです！"></textarea>
 
                     <x-button type="submit">
@@ -96,14 +96,14 @@
             <!-- コメント一覧 -->
             <div class="mt-6 space-y-4">
                 @forelse($post->comments as $comment)
-                    <div class="border-t pt-3">
-                        <p class="text-gray-800">{{ $comment->body }}</p>
-                        <p class="text-sm text-gray-500">
+                    <div class="border-t border-white/10 pt-3">
+                        <p class="text-gray-300">{{ $comment->body }}</p>
+                        <p class="text-sm text-gray-400">
                             {{ $comment->user->name }}
                         </p>
                     </div>
                 @empty
-                    <p class="text-gray-500">まだコメントはありません</p>
+                    <p class="text-gray-400 font-bold">まだコメントはありません</p>
                 @endforelse
             </div>
         </x-card>

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .glass-panel {
+        @apply bg-cyber-panel backdrop-blur-lg border border-cyber-border shadow-panel;
+    }
+    .text-glow {
+        text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+    .bg-cyber-gradient {
+        @apply bg-gradient-to-br from-[#0a0f1c] via-[#111827] to-[#0f172a];
+    }
+}

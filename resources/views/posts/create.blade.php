@@ -1,10 +1,10 @@
 <x-app-layout>
     <div>
-        <h1 class="text-xl md:text-3xl lg:text-4xl font-bold">
+        <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-cyber-accent text-glow mb-6">
             募集投稿作成
         </h1>
 
-        <x-card>
+        <div class="bg-white rounded-xl p-6 shadow-lg">
             <form method="POST" action="{{ route('posts.store') }}" class="space-y-4 text-black">
                 @csrf
 
@@ -104,7 +104,7 @@
                 </div>
 
             </form>
-        </x-card>
+        </div>
     </div>
 
     <!-- テンプレJS -->

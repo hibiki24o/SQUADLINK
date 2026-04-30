@@ -1,12 +1,12 @@
 <x-app-layout>
-    <div class="space-y-6 text-black">
+    <div>
 
         <!-- タイトル -->
-        <h1 class="text-xl md:text-3xl text-white font-bold">
+        <h1 class="text-xl md:text-3xl text-cyber-accent text-glow font-bold mb-6">
             募集投稿編集
         </h1>
 
-        <x-card>
+        <div class="bg-white rounded-xl p-6 shadow-lg">
             <form method="POST" action="{{ route('posts.update', $post) }}" class="space-y-4 text-black">
                 @csrf
                 @method('PUT')
@@ -113,7 +113,7 @@
                 </div>
 
             </form>
-        </x-card>
+        </div>
 
     </div>
 </x-app-layout>

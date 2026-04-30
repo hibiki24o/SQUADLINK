@@ -14,22 +14,24 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="min-h-screen font-sans antialiased text-white bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+<body class="min-h-screen font-sans antialiased text-gray-100 bg-cyber-bg bg-cyber-gradient overflow-x-hidden">
 
-    <!-- 背景パターン -->
-    <div class="fixed inset-0 opacity-10 pointer-events-none"
-         style="background-image: url('https://www.transparenttextures.com/patterns/stardust.png');">
+    <!-- Background Orbs / Patterns -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyber-accent opacity-10 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-indigo-500 opacity-10 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/stardust.png');"></div>
     </div>
 
     <!-- 全体 -->
-    <div class="relative min-h-screen flex flex-col">
+    <div class="relative min-h-screen flex flex-col z-10">
 
         <!-- ナビ -->
         @include('layouts.navigation')
 
         <!-- ヘッダー -->
         @isset($header)
-            <header class="bg-black/40 backdrop-blur border-b border-gray-700">
+            <header class="glass-panel border-b-0 border-b border-cyber-border sticky top-0 z-40">
                 <div class="max-w-6xl mx-auto py-4 px-4">
                     {{ $header }}
                 </div>
@@ -37,10 +39,10 @@
         @endisset
 
         <!-- メイン -->
-        <main class="flex-1 max-w-6xl mx-auto w-full py-6 sm:py-10 px-4 space-y-6">
+        <main class="flex-1 max-w-6xl mx-auto w-full py-6 sm:py-10 px-4 space-y-6 animate-fade-in-up">
 
             <!-- コンテンツカード風 -->
-            <div class="bg-black/30 backdrop-blur rounded-xl p-4 sm:p-6 shadow-lg">
+            <div class="glass-panel rounded-2xl p-4 sm:p-6 shadow-glow">
                 {{ $slot }}
             </div>
 
