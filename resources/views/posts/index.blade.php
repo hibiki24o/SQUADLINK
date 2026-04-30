@@ -35,7 +35,7 @@
                     name="keyword"
                     value="{{ request('keyword') }}"
                     placeholder="キーワード検索"
-                    class="border rounded-lg p-2">
+                    class="border rounded-lg p-2 text-black">
 
                 <x-button type="submit">
                     検索
